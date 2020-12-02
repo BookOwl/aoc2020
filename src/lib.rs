@@ -1,3 +1,4 @@
+use regex;
 use std::fs::File;
 use std::io::prelude::*;
 
@@ -8,7 +9,11 @@ pub enum Part {
     All,
 }
 
-static INPUT: [&'static str; 1] = [include_str!("inputs/day1.txt")];
+static INPUT: [&'static str; 25] = [include_str!("inputs/day1.txt"), include_str!("inputs/day2.txt"), "", "", "",
+                                    "", "", "", "", "",
+                                    "", "", "", "", "",
+                                    "", "", "", "", "",
+                                    "", "", "", "", ""];
 
 fn read_input(day: usize, file_path: Option<&str>) -> String {
     if let Some(path) = file_path {
@@ -22,5 +27,6 @@ fn read_input(day: usize, file_path: Option<&str>) -> String {
 }
 
 pub mod day1;
+pub mod day2;
 
-pub const SOLUTIONS: [&dyn Fn(Part, Option<&str>) -> (); 1] = [&day1::run];
+pub const SOLUTIONS: [&dyn Fn(Part, Option<&str>) -> (); 2] = [&day1::run, &day2::run];
