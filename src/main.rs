@@ -18,5 +18,5 @@ fn main() {
     };
     let input = matches.value_of("input");
 
-    aoc2020::SOLUTIONS.get(day - 1).expect(&format!("Day {} is not coded yet", day))(part, input)
+    aoc2020::solve(day, part, input);
 }

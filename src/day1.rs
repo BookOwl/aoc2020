@@ -1,7 +1,6 @@
 use crate::Part;
 
-pub fn run(part: Part, input_path: Option<&str>) {
-    let input_str = crate::read_input(1, input_path);
+pub fn run(part: Part, input_str: &str) {
     let input: Vec<usize> = input_str.split('\n')
                                 .filter_map(|i| i.parse().ok())
                                 .collect();

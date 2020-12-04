@@ -8,8 +8,7 @@ struct Password {
     password: String,
 }
 
-pub fn run(part: Part, input_path: Option<&str>) {
-    let input_str = crate::read_input(2, input_path);
+pub fn run(part: Part, input_str: &str) {
     let re = Regex::new(r"(?P<min>\d+)-(?P<max>\d+) (?P<rule>[a-z]): (?P<password>.+)").unwrap();
     let input: Vec<Password> = input_str.split('\n')
                                         .filter(|line| line.trim() != "")

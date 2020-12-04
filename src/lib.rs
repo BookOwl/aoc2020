@@ -30,4 +30,9 @@ pub mod day1;
 pub mod day2;
 pub mod day3;
 
-pub const SOLUTIONS: [&dyn Fn(Part, Option<&str>) -> (); 3] = [&day1::run, &day2::run, &day3::run];
+pub const SOLUTIONS: [&dyn Fn(Part, &str) -> (); 3] = [&day1::run, &day2::run, &day3::run];
+
+pub fn solve(day: usize, part: Part, input_path: Option<&str>) {
+    let input_str = read_input(day, input_path);
+    SOLUTIONS.get(day - 1).expect(&format!("Day {} is not coded yet", day))(part, &input_str)
+}
