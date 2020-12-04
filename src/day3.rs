@@ -72,12 +72,12 @@ fn trees_encountered(map: &Map, dx: usize, dy: usize) -> usize {
 }
 
 fn part1(map: &Map) {
-    let mut num_trees = trees_encountered(&map, 3, 1);;
+    let num_trees = trees_encountered(&map, 3, 1);
     println!("{}", num_trees);
 }
 
 fn part2(map: &Map) {
     let dirs = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)];
-    let mut total = dirs.iter().map(|(x, y)| trees_encountered(&map, *x, *y) as u64).fold(1, |a, b| a*b);
+    let total = dirs.iter().map(|(x, y)| trees_encountered(&map, *x, *y) as u64).fold(1, |a, b| a*b);
     println!("{}", total);
 }

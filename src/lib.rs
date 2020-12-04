@@ -1,4 +1,3 @@
-use regex;
 use std::fs::File;
 use std::io::prelude::*;
 
@@ -20,7 +19,7 @@ fn read_input(day: usize, file_path: Option<&str>) -> String {
     if let Some(path) = file_path {
         let mut file = File::open(path).expect(&format!("Error opening '{}'", path));
         let mut contents = String::with_capacity(file.metadata().unwrap().len() as usize);
-        file.read_to_string(&mut contents);
+        file.read_to_string(&mut contents).unwrap();
         contents
     } else {
         INPUT[day - 1].to_string()
