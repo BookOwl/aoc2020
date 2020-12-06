@@ -9,11 +9,17 @@ pub enum Part {
 }
 
 static INPUT: [&'static str; 25] = [include_str!("inputs/day1.txt"), include_str!("inputs/day2.txt"),
-                                    include_str!("inputs/day3.txt"), include_str!("inputs/day4.txt"), "",
-                                    "", "", "", "", "",
-                                    "", "", "", "", "",
-                                    "", "", "", "", "",
-                                    "", "", "", "", ""];
+                                    include_str!("inputs/day3.txt"), include_str!("inputs/day4.txt"),
+                                    include_str!("inputs/day5.txt"), "",
+                                    "", "",
+                                    "", "",
+                                    "", "",
+                                    "", "",
+                                    "", "",
+                                    "", "",
+                                    "", "",
+                                    "", "",
+                                    "", "", ""];
 
 fn read_input(day: usize, file_path: Option<&str>) -> String {
     if let Some(path) = file_path {
@@ -30,8 +36,9 @@ pub mod day1;
 pub mod day2;
 pub mod day3;
 pub mod day4;
+pub mod day5;
 
-pub const SOLUTIONS: [&dyn Fn(Part, &str) -> (); 4] = [&day1::run, &day2::run, &day3::run, &day4::run];
+pub const SOLUTIONS: [&dyn Fn(Part, &str) -> (); 5] = [&day1::run, &day2::run, &day3::run, &day4::run, &day5::run,];
 
 pub fn solve(day: usize, part: Part, input_path: Option<&str>) {
     let input_str = read_input(day, input_path);
