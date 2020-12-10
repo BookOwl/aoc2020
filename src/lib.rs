@@ -12,7 +12,7 @@ static INPUT: [&'static str; 25] = [include_str!("inputs/day1.txt"), include_str
                                     include_str!("inputs/day3.txt"), include_str!("inputs/day4.txt"),
                                     include_str!("inputs/day5.txt"), include_str!("inputs/day6.txt"),
                                     include_str!("inputs/day7.txt"), include_str!("inputs/day8.txt"),
-                                    "", "",
+                                    include_str!("inputs/day9.txt"), "",
                                     "", "",
                                     "", "",
                                     "", "",
@@ -40,9 +40,10 @@ pub mod day5;
 pub mod day6;
 pub mod day7;
 pub mod day8;
+pub mod day9;
 
-pub const SOLUTIONS: [&dyn Fn(Part, &str) -> (); 8] = [&day1::run, &day2::run, &day3::run, &day4::run, &day5::run,
-                                                       &day6::run, &day7::run, &day8::run];
+pub const SOLUTIONS: [&dyn Fn(Part, &str) -> (); 9] = [&day1::run, &day2::run, &day3::run, &day4::run, &day5::run,
+                                                       &day6::run, &day7::run, &day8::run, &day9::run];
 
 pub fn solve(day: usize, part: Part, input_path: Option<&str>) {
     let input_str = read_input(day, input_path);
